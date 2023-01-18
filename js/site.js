@@ -4,7 +4,7 @@ function displayMessage() {
   Swal.fire(
     {
       backdrop: false,
-      title: 'App Name',
+      title: 'Backwordz',
       text: msg
     }
   );
