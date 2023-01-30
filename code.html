@@ -75,23 +75,59 @@
       <div class="col-12 col-lg-8">
         <pre class="line-numbers">
           <code class="language-js">
-            function displayMessage() {
-              let msg = document.getElementById('message').value;
-            
-              Swal.fire(
-                {
-                  backdrop: false,
-                  title: 'Backwordz',
-                  text: msg
-                }
-              );
-            }
+            function getValues() {
+              // get the value of the input and create variable to be used
+              // as parameter in logic function
+              let inputString = document.getElementById('userString').value;
+          
+              // create a variable to hold value returned in logic function 
+              let reversedString = reverseAString(inputString);
+              
+              // after running logic function -- the returned value is used as
+              // the paremeter in the display function
+              displayString(reversedString);
+          }
+          </code>
+        </pre>
+        <pre class="line-numbers">
+          <code class="language-js">
+            function reverseAString(userString) {
+              // initialize a variable to represent the string reversed
+              let revString = "";
+              // loop through parameter value -- starting from last index
+              for(i = userString.length - 1; i >= 0; i--) {
+                  // create a variable to repesent the current character i
+                  let currentLetter = userString[i];
+                  // add the current i value to our initialized variable 
+                  revString += currentLetter;
+          
+              }
+          
+          
+          
+          // return the new string
+            return revString ;
+          }
+          </code>
+        </pre>
+        <pre class="line-numbers">
+          <code class="language-js">
+            function displayString(reversedString) {
+              // get the element that will hold the value of the new string from the document
+              // and make the string the text 
+              document.getElementById('results').textContent = reversedString;
+              // remove the invisible class from the parent element so the user can see new string
+              document.getElementById('alert').classList.remove('invisible');
+          }
           </code>
         </pre>
       </div>
       <div class="col-12 col-lg-4">
-        <p>The code is structured in one function.</p>
-        <h5><code>displayMessage()</code></h5>
+        <h5 class="fs-2 fw-bold pb-3"><code>getValues()</code></h5>
+        <p>This function displays the message in a Sweet Alert.</p>
+        <h5 class="fs-2 fw-bold pb-3"><code>reverseAString(userString)</code></h5>
+        <p>This function displays the message in a Sweet Alert.</p>
+        <h5 class="fs-2 fw-bold pb-3"><code>displayString(reversedString)</code></h5>
         <p>This function displays the message in a Sweet Alert.</p>
       </div>
     </div>
