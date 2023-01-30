@@ -23,13 +23,9 @@ function reverseAString(userString) {
         let currentLetter = userString[i];
         // add the current i value to our initialized variable 
         revString += currentLetter;
-
     }
-
-
-
-// return the new string
-  return revString ;
+    // return the new string
+    return revString ;
 }
 
 // view function
